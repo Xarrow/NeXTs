@@ -10,5 +10,7 @@ module.exports = withCSS({
 // for now build
 module.exports = {
     target: 'serverless'
-    
+
 }
+
+
