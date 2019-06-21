@@ -7,7 +7,6 @@ if (typeof require !== 'undefined') {
 module.exports = withCSS({
     cssModules: true
 })
-
 // for now build
 module.exports = {
     target: 'serverless'
