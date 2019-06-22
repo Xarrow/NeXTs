@@ -6,12 +6,13 @@ import Body from '../components/Body';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    // width: "90%"
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-  },
+  }
 }));
 
 export default function FullWidthGrid(props) {
@@ -20,9 +21,14 @@ export default function FullWidthGrid(props) {
   return (
     <div className={classes.root}>
       <Header />
-      <Body>
-        body
-      </Body>
+      <div style={{ paddingTop: 60 }}>
+        {
+          <Body
+            title={props.title}
+            text={props.text} >{props.children}
+          </Body>
+        }
+      </div>
     </div>
   );
 }

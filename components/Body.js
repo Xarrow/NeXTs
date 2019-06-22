@@ -1,34 +1,29 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Aracle from '../components/Aracle';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-    },
     paper: {
-        padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
+        padding: theme.spacing(3, 2),
     },
 }));
 
 
 export default function Body(props) {
+
+    const classes = useStyles();
     return (
-        <div>
-            <Grid container spacing={3}>
-                <Grid item xs>
-                    {/* <Paper className={useStyles.paper}>XS</Paper> */}
-                </Grid>
-                <Grid item xs={8}>
-                    <Paper className={useStyles.paper}>{props.children}</Paper>
-                </Grid>
-                <Grid item xs>
-                    {/* <Paper className={useStyles.padding}>XS</Paper> */}
-                </Grid>
+        <Grid container spacing={3}>
+            <Grid item xs>
+                {/* <Paper className={useStyles.paper}>XS</Paper> */}
             </Grid>
-        </div>
+            <Grid item xs={8}>
+               <Aracle title={props.title} > {props.children}</Aracle>
+            </Grid>
+            <Grid item xs>
+                {/* <Paper className={useStyles.padding}>XS</Paper> */}
+            </Grid>
+        </Grid>
     )
 }

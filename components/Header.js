@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import AccessibleForward from '@material-ui/icons/AccessibleForward';
+import Link from 'next/link';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,15 +21,17 @@ export default function Header() {
 
   return (
     <div className={useStyles.root}>
-      <AppBar position="static" color="primary">
-        <Toolbar variant="dense">
-          <IconButton edge="start" className={classes.AccessibleForward} color="inherit" aria-label="Menu">
-            <AccessibleForward />
-          </IconButton>
-          <Typography variant="h6" color="inherit">
-            Accessible
-          </Typography>
-        </Toolbar>
+      <AppBar position="fixed" color="primary">
+        <Link href="/" prefetch >
+          <Toolbar variant="dense">
+            <IconButton edge="start" className={classes.AccessibleForward} color="inherit">
+              <AccessibleForward />
+            </IconButton>
+            <Typography variant="h6" color="inherit">
+              <span>Access</span>
+            </Typography>
+          </Toolbar>
+        </Link>
       </AppBar>
     </div>
   );
