@@ -20,7 +20,7 @@ export default function FullWidthGrid(props) {
 
   return (
     <div className={classes.root}>
-      <Header />
+      <Header {...props}/>
       <div style={{ paddingTop: 60 }}>
         {
           <Body

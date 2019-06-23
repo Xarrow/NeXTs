@@ -1,7 +1,7 @@
 {
     "version":2,
-    "name":"next2",
-    "alias":"next2",
+    "name":"next",
+    "alias":"next",
     "builds":[
         {
             "src": "package.json", "use": "@now/next"

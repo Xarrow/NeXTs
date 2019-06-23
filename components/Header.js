@@ -16,11 +16,12 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Header() {
+export default function Header(props, ) {
   const classes = useStyles();
+  const headName = props.headName || "Access";
 
   return (
-    <div className={useStyles.root}>
+    <div className={classes.root}>
       <AppBar position="fixed" color="primary">
         <Link href="/" prefetch >
           <Toolbar variant="dense">
@@ -28,7 +29,7 @@ export default function Header() {
               <AccessibleForward />
             </IconButton>
             <Typography variant="h6" color="inherit">
-              <span>Access</span>
+              <span>{ headName }</span>
             </Typography>
           </Toolbar>
         </Link>
