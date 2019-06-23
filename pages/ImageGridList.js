@@ -16,8 +16,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 500,
-    height: 450,
+    width:"100%",
+    height:"100%"
   },
 }));
 
@@ -46,7 +46,7 @@ export default function ImageGridList() {
     <div className={classes.root }>
       <GridList cellHeight={350} className={classes.gridList} cols={3}>
         {tileData.map(tile => (
-          <GridListTile key={tile.img} cols={tile.cols || 1}>
+          <GridListTile key={tile.key} cols={tile.cols || 1}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
