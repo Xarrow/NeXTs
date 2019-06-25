@@ -5,9 +5,11 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import tileData from './tileData';
+// import tileData from './tileData';
 import Header from '../components/Header';
 import cssInJs from '../components/Style';
+import fetch from 'isomorphic-unfetch';
+
 
 // 未使用
 const useStyles = makeStyles((theme) => createStyles({
@@ -30,11 +32,11 @@ const useStyles = makeStyles((theme) => createStyles({
 
 export default function ImageGridList(props) {
   const classes = cssInJs;
-  
+  const tileData = props.galleryData;
   return (
     <div className={classes.root}>
       <Header headName={props.pathname}/>
-      <GridList cellHeight={300} style={classes.ImageGridLst_GridList} cols={3}>
+      <GridList cellHeight={300} style={classes.ImageGridLst_GridList} cols={4}>
         {tileData.map(tile => (
           <GridListTile key={tile.key} cols={tile.cols || 1}>
             <img src={tile.img} alt={tile.title} />
@@ -54,6 +56,14 @@ export default function ImageGridList(props) {
   );
 }
 
-ImageGridList.getInitialProps = async ({ pathname })=>{
-  return { pathname :pathname};
+ImageGridList.getInitialProps = async ({ pathname ,query })=>{
+  const folderName = query.name || "liangqunru";
+  const pageSize = query.pageSize || 20;
+  const galleryAPI = `https://helixcs.tk/api/now/gallery?folderName=${folderName}&pageSize=${pageSize}`;
+
+  const response = await fetch(galleryAPI);
+  const json = await response.json();
+  // console.log(json['data']);
+
+  return { galleryData :json['data']};
 }

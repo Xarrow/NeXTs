@@ -37,6 +37,8 @@ const tileData = [
     title: 'Honey',
     author: '嘻红豆',
     key:"f",
+    cols:1,
+
   },
   {
     img: '/static/images/d8cd7ff9gy1g4983t53qtj22c0340hdt.jpg',
@@ -56,12 +58,15 @@ const tileData = [
     title: 'Mushrooms',
     author: '嘻红豆',
     key:"i",
+    cols:0,
   },
   {
     img: '/static/images/d8cd7ff9gy1g4983ka8bnj232i2avb2c.jpg',
     title: 'Olive oil',
     author: '嘻红豆',
     key:"j",
+    cols:0,
+
   },
   {
     img: '/static/images/d8cd7ff9gy1g4983uy8qgj223m1o0u0y.jpg',
@@ -75,6 +80,7 @@ const tileData = [
     title: 'Bike',
     author: '嘻红豆',
     key:"l",
+    cols:0,
   },
   {
     img: '/static/images/d8cd7ff9gy1g498aku3jtj234022onpe.jpg',

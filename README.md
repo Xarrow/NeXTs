@@ -1,2 +1,9 @@
 # NeXTs
 NEXT.js samples
+
+[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/zpnk/hello-world)
+
+
+### DEMO
+
+[https://next.helixcs.now.sh/](https://next.helixcs.now.sh/)

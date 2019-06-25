@@ -4,11 +4,13 @@ const withCSS = require('@zeit/next-css')
 if (typeof require !== 'undefined') {
     require.extensions['.css'] = (file) => { }
 }
+//  use style.css
+//  wepack config
 module.exports = withCSS({
-    cssModules: true
+    cssModules: true,
+    target: 'serverless',
+    webpack: function (config) {
+        config.node = { fs: 'empty', net: "empty", tls: "empty" };
+        return config;
+    },
 })
-// for now build
-module.exports = {
-    target: 'serverless'
-
-}
