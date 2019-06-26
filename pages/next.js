@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 function NextPage({ title, mdText }) {
 
   return (
+    
     <FullWidthGrid title={title}>
       <div className="markdown">
         <ReactMarkdown source={mdText} escapeHtml={false} />
