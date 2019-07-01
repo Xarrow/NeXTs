@@ -1,6 +1,8 @@
 import FullWidthGrid from '../components/Layout';
 import Link from 'next/link';
 
+// https://medium.com/@aduyng/build-a-spa-with-next-js-and-material-ui-26d2f5f35792
+
 export default function IndexPage(props) {
   const index = "/";
   const gallery = "/gallery";
@@ -12,14 +14,14 @@ export default function IndexPage(props) {
       title={"NeXTs"}
       headName={"Next.js SSR Sample"} >
       <div>
-        <Link prefetch href="/gallery?name=liangqunru&pageSize=20">
-          <a> {props.protocol}{props.host}{gallery}?name=liangqunru&pageSize=20 </a>
+        <Link prefetch href="/gallery?name=liangqunru_all_next&pageSize=100">
+          <a> {props.protocol}{props.host}{gallery}?name=liangqunru_all_next&pageSize=100 </a>
         </Link>
       </div>
 
       <div>
-        <Link prefetch href="/gallery?name=WY&pageSize=20">
-          <a> {props.protocol}{props.host}{gallery}?name=WY&pageSize=20 </a>
+        <Link prefetch href="/api/next/gallery?folderName=weiye&offset=9&pageSize=100&currentPage=1">
+          <a> https://helixcs.tk/api/next/gallery?folderName=WY&offset=9&pageSize=100&currentPage= </a>
         </Link>
       </div>
 
@@ -29,6 +31,11 @@ export default function IndexPage(props) {
         </Link>
       </div>
 
+      <div>
+        <Link prefetch href={`${next}?foo=nginx_demo.md`}>
+          <a> {props.protocol}{props.host}{next}?foo=nginx_demo.md </a>
+        </Link>
+      </div>
       <div>
         <Link href={sample}>
           <a> {props.protocol}{props.host}{sample} </a>

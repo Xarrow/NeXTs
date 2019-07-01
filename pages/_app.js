@@ -4,6 +4,7 @@ import Link from 'next/link'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import Header from '../components/Header';
+import { fontFamily } from '@material-ui/system';
 
 const linkStyle = {
     margin: '0 10px 0 0'
@@ -31,7 +32,7 @@ export default class MyApp extends App {
         const { Component, pageProps } = this.props
         return (
             <div className="root">
-                <Header headName={"Index"} />
+                {/* <Header headName={"Index"} /> */}
                 <Container>
                     <Component {...pageProps} />
                 </Container>

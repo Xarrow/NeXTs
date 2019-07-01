@@ -1,11 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Aracle from '../components/Aracle';
+import styles from '../static/jian.css';
 
 export default function Body(props) {
-
     return (
+        <div className={styles.BodyGrid}>
         <Grid container spacing={2}>
             <Grid item xs>
                 {/* <Paper className={useStyles.paper}>XS</Paper> */}
@@ -17,5 +17,6 @@ export default function Body(props) {
                 {/* <Paper className={useStyles.padding}>XS</Paper> */}
             </Grid>
         </Grid>
+        </div>
     )
 }

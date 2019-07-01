@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import AccessibleForward from '@material-ui/icons/AccessibleForward';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const useStyles = makeStyles(theme => ({
   root: {

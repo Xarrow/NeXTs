@@ -3,13 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(theme => ({
-    paper2: {
-        margin: 10, padding: 20
-    },
-}));
 export default function Aracle(props) {
-    const classes = useStyles();
 
     return (
         <Paper style={{margin: 10, padding: 20}} >

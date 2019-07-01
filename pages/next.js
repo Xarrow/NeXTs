@@ -1,16 +1,37 @@
 import fetch from 'isomorphic-unfetch';
 import FullWidthGrid from '../components/Layout';
-import ReactMarkdown from 'react-markdown';
+import Highlight from 'react-highlight';
+import marked from 'marked';
 
 function NextPage({ title, mdText }) {
 
+  var hljs = require('highlight.js'); // https://highlightjs.org/
+
+  // 通常的默认值们
+  var md = require('markdown-it')({
+    html: true,
+    linkify: true,
+    typographer: true,
+    highlight: function (str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return '<pre class="hljs"><code>' +
+            hljs.highlight(lang, str, true).value +
+            '</code></pre>';
+        } catch (__) { }
+      }
+
+      return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+    }
+  }).enable(['link']).enable('image');
+
   return (
-    
     <FullWidthGrid title={title}>
       <div className="markdown">
-        <ReactMarkdown source={mdText} escapeHtml={false} />
+        <Highlight innerHTML={true} languages={["bash", "javascript", "python", "java", "html"]}>{md.render(mdText)}</Highlight>
       </div>
-    </FullWidthGrid>)
+    </FullWidthGrid>
+  )
 }
 
 NextPage.getInitialProps = async ({ query, res }) => {
@@ -23,7 +44,7 @@ NextPage.getInitialProps = async ({ query, res }) => {
     return { title: `参数资源为空` }
   }
   const resd = await fetch(
-    `https://simple-box.helixcs.now.sh/api/read?fileName=${foo}`)
+    `https://helixcs.tk/api/read?fileName=${foo}`)
 
   const mdText = await resd.text();
   const contentType = await resd.headers.get("content-type");
