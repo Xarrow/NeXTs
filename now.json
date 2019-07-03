@@ -1,10 +1,50 @@
 {
-    "version":2,
-    "name":"next",
-    "alias":"next",
-    "builds":[
+    "version": 2,
+    "name": "next",
+    "alias": "next",
+    "env": {
+        "tag": "product"
+    },
+    "builds": [
         {
-            "src": "package.json", "use": "@now/next"
+            "src": "test.html",
+            "use": "@now/static"
+        },
+        {
+            "src": "package.json",
+            "use": "@now/next"
+        },
+        {
+            "src": "api/index.js",
+            "use": "@now/node"
+        }
+    ],
+    "regions": [
+        "all"
+    ],
+    "routes": [
+        {
+            "src": "/index7.html",
+            "methods": [
+                "GET"
+            ],
+            "dest": "/api/index.js"
+        },
+        {
+            "src": "/index8.html",
+            "methods": [
+                "GET"
+            ],
+            "headers": {
+                "cache-control": "s-maxage=3000",
+                "Accept-Encoding": "gzip"
+            },
+            "dest": "/index"
+        },
+        {
+            "src": "/404.html",
+            "status": 404,
+            "dest": "/404"
         }
     ]
 }

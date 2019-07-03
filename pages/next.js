@@ -1,14 +1,12 @@
-import fetch from 'isomorphic-unfetch';
 import FullWidthGrid from '../components/Layout';
 import Highlight from 'react-highlight';
-import marked from 'marked';
+import { mdxAPIRequest } from '../components/SimpleBox';
+import hljs from 'highlight.js';
+import MarkdownIt from 'markdown-it';
 
 function NextPage({ title, mdText }) {
 
-  var hljs = require('highlight.js'); // https://highlightjs.org/
-
-  // 通常的默认值们
-  var md = require('markdown-it')({
+  var md = MarkdownIt({
     html: true,
     linkify: true,
     typographer: true,
@@ -28,7 +26,9 @@ function NextPage({ title, mdText }) {
   return (
     <FullWidthGrid title={title}>
       <div className="markdown">
-        <Highlight innerHTML={true} languages={["bash", "javascript", "python", "java", "html"]}>{md.render(mdText)}</Highlight>
+        <Highlight innerHTML={true} languages={["bash", "javascript", "python", "java", "html"]}>
+          {md.render(mdText)}
+        </Highlight>
       </div>
     </FullWidthGrid>
   )
@@ -36,29 +36,29 @@ function NextPage({ title, mdText }) {
 
 NextPage.getInitialProps = async ({ query, res }) => {
   // /next?foo=<resource file name>
-  const foo = query.foo;
-  console.log('FOO', foo)
+  const fileName = query.fileName
+  const fileId = query.fileId;
+  console.log(`fileName=${fileName} , fileId=${fileId}`)
 
-  // foo resource is blank
-  if (undefined == foo || "" === foo) {
-    return { title: `参数资源为空` }
-  }
-  const resd = await fetch(
-    `https://helixcs.tk/api/read?fileName=${foo}`)
+  let mdText = '';
 
-  const mdText = await resd.text();
-  const contentType = await resd.headers.get("content-type");
-  console.log(`==> ${contentType}`);
-
-  // 400
-  if (contentType && contentType.indexOf("json") > -1) {
-    const retCode = await resd.json;
-    if (200 != retCode) {
-      return { title: `${foo} 没有找到` }
-    }
+  if (fileId !== undefined && "" != fileId) {
+    mdText = await mdxAPIRequest(fileId);
   }
 
-  return { title: foo, mdText: mdText }
+  // const mdText = await resd.text();
+  // const contentType = await resd.headers.get("content-type");
+  // console.log(`==> ${contentType}`);
+
+  // // 400
+  // if (contentType && contentType.indexOf("json") > -1) {
+  //   const retCode = await resd.json;
+  //   if (200 != retCode) {
+  //     return { title: `${foo} 没有找到` }
+  //   }
+  // }
+  // console.log(mdText)
+  return { mdText: mdText['data']['text'], title: mdText['data']['name'] }
 }
 
 export default NextPage;

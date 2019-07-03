@@ -1,22 +1,27 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Aracle from '../components/Aracle';
-import styles from '../static/jian.css';
+import Hidden from '@material-ui/core/Hidden';
+import withWidth from '@material-ui/core/withWidth';
+import styles from '../static/css/jian.css';
 
-export default function Body(props) {
+function Body(props) {
     return (
-        <div className={styles.BodyGrid}>
-        <Grid container spacing={2}>
-            <Grid item xs>
-                {/* <Paper className={useStyles.paper}>XS</Paper> */}
+        <div className={styles.BodyGrid} style={{width:"100%"}}>
+            {/* <p className={styles.watermark}>演示测试项目</p> */}
+
+            <Grid container spacing={2}>
+                <Hidden xsDown>
+                    <Grid item xs></Grid>
+                </Hidden>
+                <Grid item xs={12} sm={8}>
+                    <Aracle title={props.title} > {props.children}</Aracle>
+                </Grid>
+                <Hidden xsDown>
+                    <Grid item xs></Grid>
+                </Hidden>
             </Grid>
-            <Grid item xs={8}>
-               <Aracle title={props.title} > {props.children}</Aracle>
-            </Grid>
-            <Grid item xs>
-                {/* <Paper className={useStyles.padding}>XS</Paper> */}
-            </Grid>
-        </Grid>
         </div>
     )
 }
+export default withWidth()(Body);

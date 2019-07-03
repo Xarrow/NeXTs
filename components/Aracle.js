@@ -6,8 +6,8 @@ import Typography from '@material-ui/core/Typography';
 export default function Aracle(props) {
 
     return (
-        <Paper style={{margin: 10, padding: 20}} >
-            <Typography style={{ textAlign: "center" }} variant="h5" component="h3">
+        <Paper style={{margin: 10, padding: 20,}} >
+            <Typography style={{ textAlign: "center" }} variant="h4" component="h3">
                 {props.title}
             </Typography>
             <br />

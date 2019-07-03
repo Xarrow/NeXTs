@@ -1,5 +1,3 @@
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
 
 export default {
     ImageGridLst_GridList: {

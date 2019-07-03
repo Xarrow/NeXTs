@@ -5,8 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import AccessibleForward from '@material-ui/icons/AccessibleForward';
-import Link from 'next/link';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,7 +23,22 @@ export default function Header(props, ) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" color="primary">
+      <Head>
+         <title>NeTXs</title>
+         <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+            key="viewport"
+          />
+      </Head>
+      {/* <Head>
+        <meta
+          name="viewport"
+          content="initial-scale=1.2, width=device-width"
+          key="viewport"
+        />
+      </Head> */}
+      <AppBar position="fixed" style={{background:"hsl(214, 78%, 50%)" ,opacity:1}}>
         <Link href="/" prefetch >
           <Toolbar variant="dense">
             <IconButton edge="start" className={classes.AccessibleForward} color="inherit">

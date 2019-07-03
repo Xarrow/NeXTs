@@ -1,10 +1,8 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import Link from 'next/link'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import Header from '../components/Header';
-import { fontFamily } from '@material-ui/system';
 
 const linkStyle = {
     margin: '0 10px 0 0'
