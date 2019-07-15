@@ -130,7 +130,7 @@ export default class ImageGridList extends React.Component {
 
           {tileData.map(tile => (
             <GridListTile key={tile.key} cols={tile.cols || 1}>
-              <img src={tile.img} alt={tile.title} />
+              <img src={tile.images.replace("?stream=true","").replace("helixcs.tk","helixcs.herokuapp.com")} alt={tile.title} />
               <GridListTileBar
                 title={tile.title}
                 subtitle={<span>by: {tile.author}</span>}

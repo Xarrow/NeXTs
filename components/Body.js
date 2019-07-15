@@ -7,7 +7,7 @@ import styles from '../static/css/jian.css';
 
 function Body(props) {
     return (
-        <div className={styles.BodyGrid} style={{width:"100%"}}>
+        <div className={styles.BodyGrid}>
             {/* <p className={styles.watermark}>演示测试项目</p> */}
 
             <Grid container spacing={2}>
@@ -15,7 +15,9 @@ function Body(props) {
                     <Grid item xs></Grid>
                 </Hidden>
                 <Grid item xs={12} sm={8}>
-                    <Aracle title={props.title} > {props.children}</Aracle>
+                    <Aracle title={props.title} createdTime={props.createdTime} >
+                        {props.children}
+                    </Aracle>
                 </Grid>
                 <Hidden xsDown>
                     <Grid item xs></Grid>

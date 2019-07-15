@@ -1,5 +1,5 @@
 
-export const rootAPI = "https://simple-box.helixcs.now.sh";
+export const rootAPI = "https://helixcs.tk";
 //  图片流API
 export const galleryAPI = `${rootAPI}/api/next/gallery?folderName=%s&offset=%s&currentPage=1&pageSize=%s&currentPage=%s`;
 // mdx 文章列表

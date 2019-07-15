@@ -4,7 +4,7 @@ import { mdxAPIRequest } from '../components/SimpleBox';
 import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it';
 
-function NextPage({ title, mdText }) {
+function NextPage(props) {
 
   var md = MarkdownIt({
     html: true,
@@ -24,10 +24,10 @@ function NextPage({ title, mdText }) {
   }).enable(['link']).enable('image');
 
   return (
-    <FullWidthGrid title={title}>
+    <FullWidthGrid {...props}>
       <div className="markdown">
         <Highlight innerHTML={true} languages={["bash", "javascript", "python", "java", "html"]}>
-          {md.render(mdText)}
+          {md.render(props.mdText)}
         </Highlight>
       </div>
     </FullWidthGrid>
@@ -58,7 +58,11 @@ NextPage.getInitialProps = async ({ query, res }) => {
   //   }
   // }
   // console.log(mdText)
-  return { mdText: mdText['data']['text'], title: mdText['data']['name'] }
+  return {
+    mdText: mdText['data']['text'],
+    title: mdText['data']['name'],
+    createdTime:mdText['data']['date'],
+  }
 }
 
 export default NextPage;

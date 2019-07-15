@@ -25,7 +25,7 @@ class FirebaseImagePage extends React.Component {
         var request = require('request').defaults({ encoding: null });;
         const apiCall = () => {
             return new Promise((resolve, reject) => {
-                request("https://helixcs.herokuapp.com/api/read/images/resize/name/nature-1510499378825-9667.jpg?ratio=0.4", function (error, response, body) {
+                request("https://helixcs.herokuapp.com/api/read/images/resize/name/cat.jpg?ratio=0.4", function (error, response, body) {
                     if (error || response.statusCode != 200) {
                         reject(error)
                     }

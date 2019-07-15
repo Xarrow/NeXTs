@@ -12,25 +12,13 @@ export default function IndexPage(props) {
   console.log('%c NeXTs!', 'background: #222; font-weight:700;color: #bada55');
   return (
     <FullWidthGrid
-      title={"NeXTs"}
-      headName={"MdxList"} >
+      title={"你好，世界！"}
+      headName={"FuncTIons"} >
       <div style={{ display: "flex", flexDirection: "column" }}>
         {props.mdxList.data.map(x => (
           <MdxItem {...x} key={x.id} />
         ))}
       </div>
-      {/* <div>
-        <Link prefetch href="/gallery?name=liangqunru_all_next&pageSize=100">
-          <a> {props.protocol}{props.host}{gallery}?name=liangqunru_all_next&pageSize=100 </a>
-        </Link>
-      </div>
-
-      <div>
-        <Link prefetch href="/api/next/gallery?folderName=weiye&offset=9&pageSize=100&currentPage=1">
-          <a> https://helixcs.tk/api/next/gallery?folderName=WY&offset=9&pageSize=100&currentPage= </a>
-        </Link>
-      </div> */}
-
     </FullWidthGrid>
   )
 }

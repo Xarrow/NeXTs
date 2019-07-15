@@ -22,13 +22,11 @@ export default function FullWidthGrid(props) {
   return (
     <div className={classes.root}>
       <Header {...props} />
-      <Body
-        title={props.title}
-        text={props.text} >
+      <Body {...props} >
         {props.children}
         <Footer />
       </Body>
-      
+
     </div>
   );
 }

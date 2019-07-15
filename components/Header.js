@@ -1,54 +1,41 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import AccessibleForward from '@material-ui/icons/AccessibleForward';
+import { Functions, } from '@material-ui/icons';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-}));
-
 export default function Header(props, ) {
-  const classes = useStyles();
-  const headName = props.headName || "Access";
-
+  const headName = props.headName || "FuncTIons";
   return (
-    <div className={classes.root}>
+    <div>
+      {/* Head */}
       <Head>
-         <title>NeTXs</title>
-         <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-            key="viewport"
-          />
-      </Head>
-      {/* <Head>
+        <title>{headName}</title>
+        <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
         <meta
           name="viewport"
-          content="initial-scale=1.2, width=device-width"
+          content="initial-scale=1.0, width=device-width"
           key="viewport"
         />
-      </Head> */}
-      <AppBar position="fixed" style={{background:"hsl(214, 78%, 50%)" ,opacity:1}}>
-        <Link href="/" prefetch >
-          <Toolbar variant="dense">
-            <IconButton edge="start" className={classes.AccessibleForward} color="inherit">
-              <AccessibleForward />
+        <meta name="theme-color" content="hsl(214, 78%, 50%)" />
+      </Head>
+
+      {/* AppBar */}
+      <AppBar position="fixed"
+        style={{ backgroundColor: "hsl(214, 78%, 50%)", opacity: 1 }}>
+        <Toolbar variant="dense">
+          <Link href="/" prefetch >
+            <IconButton edge="start" color="inherit" >
+              <Functions />
             </IconButton>
-            <Typography variant="h6" color="inherit">
-              <span>{ headName }</span>
-            </Typography>
-          </Toolbar>
-        </Link>
+          </Link>
+          <Typography variant="h6" color="inherit">
+            <span>{headName}</span>
+          </Typography>
+        </Toolbar>
       </AppBar>
     </div>
   );

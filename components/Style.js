@@ -12,7 +12,14 @@ export default {
         justifyContent: 'space-around',
         overflow: 'hidden',
         backgroundColor: 'red',
-    }
+    },
 
+
+    AracleMainTitle:{
+        textAlign: "center",
+        fontFamily: "'Google Sans',sans-serif",
+        letterSpacing: "0.004em",
+        marginTop: "1em",
+    }
 
 }

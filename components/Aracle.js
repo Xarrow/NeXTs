@@ -3,14 +3,38 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-export default function Aracle(props) {
+const AracleMainTitle = {
+    textAlign: "center",
+    fontFamily: "'Google Sans',sans-serif",
+    letterSpacing: "0.004em",
+    marginTop: "1.8em",
+    marginBottom: "1em",
+}
 
+const AracleSubTitle = {
+    textAlign: "left",
+    fontFamily: "'Google Sans',sans-serif",
+    letterSpacing: "0.004em",
+    marginTop: "1em",
+    marginBottom: "1em",
+    color:"hsl(0, 0%, 67%)"
+}
+
+const AraclePaper = { margin: 10, padding: 20, }
+
+export default function Aracle(props) {
     return (
-        <Paper style={{margin: 10, padding: 20,}} >
-            <Typography style={{ textAlign: "center" }} variant="h4" component="h3">
+        <Paper style={AraclePaper} >
+            <Typography
+                style={AracleMainTitle}
+                className={"AracleMainTitle"}
+                variant="h4"
+                component="h3">
                 {props.title}
             </Typography>
-            <br />
+            <p style={AracleSubTitle}>
+                {props.createdTime === undefined ? "" : "同步时间 : " + props.createdTime}
+            </p>
             <Typography component="div">
                 {props.children}
             </Typography>
