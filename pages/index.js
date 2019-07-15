@@ -4,12 +4,16 @@ import MdxItem from '../components/MdxItem';
 
 // https://medium.com/@aduyng/build-a-spa-with-next-js-and-material-ui-26d2f5f35792
 
+// AMP
+// export const config  = { amp : true};
+
 export default function IndexPage(props) {
   const index = "/";
   const gallery = "/gallery";
   const next = "/next";
   const sample = "/sample";
   console.log('%c NeXTs!', 'background: #222; font-weight:700;color: #bada55');
+
   return (
     <FullWidthGrid
       title={"你好，世界！"}
