@@ -7,4 +7,5 @@ NEXT.js samples
 
 ### DEMO
 
+[now.json config for node](https://github.com/zeit/now-examples/blob/master/now.json)
 [https://next.helixcs.now.sh/](https://next.helixcs.now.sh/)

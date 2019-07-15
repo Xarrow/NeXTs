@@ -29,6 +29,6 @@ IndexPage.getInitialProps = async ({ pathname, query, asPath, req, res }) => {
   // const protocol = req.headers.referer.split('://')[0]
   const folderName = query.folderName || "next_blog"
   const mdxList = await mdxListAPIRequest(folderName);
-  console.log(mdxList)
+  // console.log(mdxList)
   return { host: host, protocol: "https://", mdxList: mdxList };
 }

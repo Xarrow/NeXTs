@@ -7,11 +7,18 @@
     },
     "builds": [
         {
-            "src": "test.html",
+            "src": "static/**/*",
             "use": "@now/static"
         },
         {
             "src": "package.json",
+            "use": "@now/static-build",
+            "config": {
+                "distDir": "dist"
+            }
+        },
+        {
+            "src": "next.config.js",
             "use": "@now/next"
         },
         {

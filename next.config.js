@@ -1,4 +1,5 @@
 const withCSS = require('@zeit/next-css')
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 // fix: prevents error when .css files are required by node
 if (typeof require !== 'undefined') {
@@ -9,10 +10,19 @@ if (typeof require !== 'undefined') {
 module.exports = withCSS({
     cssModules: true,
     //  包形式， SSR 还是静态页面
-    // target: 'server',
-    target: 'serverless',
-    webpack: function (config) {
+    target: 'server',
+    // target: 'serverless',
+    webpack: function (config,options) {
         config.node = { fs: 'empty', net: "empty", tls: "empty" };
+
+        // css optimization
+        config.module.rules.push({
+            test: /\.(raw)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            use: 'raw-loader',
+        });
+        if (Array.isArray(config.optimization.minimizer)) {
+            config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}));
+        }
         return config;
     },
 
