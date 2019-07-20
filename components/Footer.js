@@ -15,6 +15,15 @@ export default function Footer(props) {
                 <span>Google Drive</span>
                 <span> 强力驱动</span>
             </div>
+            {props.node !== undefined ? (
+                <div className={styles.footer1}>
+                    <span> 当前节点: {props.node} </span>
+                </div>
+            ) : (
+                    <div className={styles.footer1}>
+                        <span></span>
+                    </div>
+                )}
         </div>
     )
 }

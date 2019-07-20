@@ -15,7 +15,7 @@ function Body(props) {
                     <Grid item xs></Grid>
                 </Hidden>
                 <Grid item xs={12} sm={8}>
-                    <Aracle title={props.title} createdTime={props.createdTime} >
+                    <Aracle title={props.title} createdTime={props.createdTime} modifiedTime={props.modifiedTime} >
                         {props.children}
                     </Aracle>
                 </Grid>

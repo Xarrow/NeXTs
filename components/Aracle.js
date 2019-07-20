@@ -33,7 +33,7 @@ export default function Aracle(props) {
                 {props.title}
             </Typography>
             <p style={AracleSubTitle}>
-                {props.createdTime === undefined ? "" : "同步时间 : " + props.createdTime}
+                {props.modifiedTime === undefined ? "" : "同步时间 : " + props.modifiedTime}
             </p>
             <Typography component="div">
                 {props.children}

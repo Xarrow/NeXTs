@@ -14,7 +14,6 @@ body{
     justify-content: start;
     align-content: center;
 }
-
 header > div {
     color: aliceblue;
     font-family: "Google Sans",sans-serif;
@@ -37,6 +36,9 @@ h3.AracleMainTitle::first-letter{
     background: aliceblue;
     border-radius: 5px;
 
+}
+:local(.mdxItem:hover){
+    background-color: hsl(0, 0%, 85%);
 }
 :local(.aaa){
     font-family: "Google Sans",sans-serif;

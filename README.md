@@ -10,6 +10,9 @@ NEXT.js samples
 [now.json config for node](https://github.com/zeit/now-examples/blob/master/now.json)
 [https://next.helixcs.now.sh/](https://next.helixcs.now.sh/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/81fe0e3b-b4b7-4c58-afea-64543bdd1c18/deploy-status)](https://app.netlify.com/sites/xarrow/deploys)
+
+
 ### TODO
 
 * Support AMP

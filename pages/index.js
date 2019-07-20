@@ -1,6 +1,7 @@
 import FullWidthGrid from '../components/Layout';
 import { mdxListAPIRequest } from '../components/SimpleBox';
 import MdxItem from '../components/MdxItem';
+import { styles } from '../static/css/jian.css';
 
 // https://medium.com/@aduyng/build-a-spa-with-next-js-and-material-ui-26d2f5f35792
 
@@ -17,10 +18,11 @@ export default function IndexPage(props) {
   return (
     <FullWidthGrid
       title={"你好，世界！"}
-      headName={"FuncTIons"} >
+      headName={"FuncTIons"}
+      node= {props.currentNode} >
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {props.mdxList.data.map(x => (
-          <MdxItem {...x} key={x.id} />
+        {props.mdxListData.map(x => (
+          <MdxItem {...x}  key={x.id} />
         ))}
       </div>
     </FullWidthGrid>
@@ -32,7 +34,9 @@ IndexPage.getInitialProps = async ({ pathname, query, asPath, req, res }) => {
   const host = req ? req.headers.host : window.location.hostname;
   // const protocol = req.headers.referer.split('://')[0]
   const folderName = query.folderName || "next_blog"
-  const mdxList = await mdxListAPIRequest(folderName);
+  const mdxListReponse = await mdxListAPIRequest(folderName);
   // console.log(mdxList)
-  return { host: host, protocol: "https://", mdxList: mdxList };
+  const mdxListData = mdxListReponse.data;
+  const currentNode = mdxListReponse.tag;
+  return { host: host, protocol: "https://", mdxListData: mdxListData,node: currentNode};
 }

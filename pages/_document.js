@@ -17,8 +17,6 @@ export default class MyDocument extends Document {
           <link rel='stylesheet' type='text/css' href='/static/css/jian.css' />
           <meta name="theme-color" content="hsl(214, 78%, 50%)" />
         </Head>
-        }
-
         <body>
           <Main />
           <NextScript />

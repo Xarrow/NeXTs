@@ -24,7 +24,7 @@ export default function FullWidthGrid(props) {
       <Header {...props} />
       <Body {...props} >
         {props.children}
-        <Footer />
+        <Footer {...props} />
       </Body>
 
     </div>
