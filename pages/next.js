@@ -5,6 +5,10 @@ import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it';
 
 function NextPage(props) {
+  // set line number
+  // hljs.initLineNumbersOnLoad({
+  //   singleLine: true
+  // });
 
   var md = MarkdownIt({
     html: true,
