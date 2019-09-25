@@ -20,6 +20,8 @@
 
 * Support Start Animation , [https://github.com/illinois/next-page-transitions](https://github.com/illinois/next-page-transitions)  , [router event](https://github.com/zeit/next.js/#router-events)
 
+* Support `next-offline`
+
 ### NOTES
 * next.js AMP 支持
 

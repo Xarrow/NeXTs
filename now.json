@@ -1,7 +1,7 @@
 {
     "version": 2,
-    "name": "next",
-    "alias": "next",
+    "name": "next-dev",
+    "alias": "next-dev",
     "env": {
         "tag": "product"
     },
