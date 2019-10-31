@@ -12,6 +12,7 @@ export default class MdxItem extends React.Component {
     }
     render() {
         return (
+            
             <Card className={styles.mdxItem} key={this.props.id}>
                 <CardContent>
                     {/* <Typography className={""} gutterBottom>
