@@ -5,6 +5,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 if (typeof require !== 'undefined') {
     require.extensions['.css'] = (file) => { }
 }
+
 //  use style.css
 //  wepack config
 module.exports = withCSS({
