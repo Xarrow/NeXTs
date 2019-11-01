@@ -67,7 +67,8 @@ NextPage.getInitialProps = async ({ query, res }) => {
     title: mdText['data']['name'],
     createdTime:mdText['data']['date'],
     modifiedTime:mdText['data']['modifiedTime'],
-    node:mdText['tag']
+    node:mdText['tag'],
+    headName:mdText['data']['name']
   }
 }
 
