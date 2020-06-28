@@ -1,4 +1,4 @@
-const ROOT_DOMAIN = "helixcs.tk";
+const ROOT_DOMAIN = "zeit.fun";
 
 const ROOT_API = `https://${ROOT_DOMAIN}`;
 

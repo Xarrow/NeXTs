@@ -62,13 +62,15 @@ NextPage.getInitialProps = async ({ query, res }) => {
   //   }
   // }
   // console.log(mdText)
+  // 文章标题首字母大写
+  const title = mdText['data']['name'].replace(/^\S/, s => s.toUpperCase());
   return {
     mdText: mdText['data']['text'],
-    title: mdText['data']['name'],
+    title: title,
     createdTime:mdText['data']['date'],
     modifiedTime:mdText['data']['modifiedTime'],
     node:mdText['tag'],
-    headName:mdText['data']['name']
+    headName:title
   }
 }
 

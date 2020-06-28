@@ -1,0 +1,210 @@
+html{
+    width: 99%;
+}
+body{
+    background-image:url("/static/img/list_background_dark.png");
+    background-attachment: fixed;
+    text-rendering: optimizeLegibility;
+    
+}
+
+/* AppBar */
+._3QRoOs_ZitbTq5aQ_UCyLu{
+    display: flex;
+    justify-content: start;
+    align-content: center;
+}
+header > div {
+    color: aliceblue;
+    font-family: "Google Sans",sans-serif;
+}
+/* 文章标题 */
+._2BFF37626BX2MLiJZLK1eV{
+    text-align: center;
+    font-family: "Google Sans",sans-serif;
+    letter-spacing: 0.004em;
+}
+/* 标题首字母大写 */
+h3._2BFF37626BX2MLiJZLK1eV::first-letter{
+    text-transform: uppercase;
+}
+
+/* mdx 列表 */
+._3w0zC27c-P4b3IqoB19h3u{
+    margin: 10px;
+    font-family: "Google Sans",sans-serif;
+    background: aliceblue;
+    border-radius: 5px;
+
+}
+._3w0zC27c-P4b3IqoB19h3u:hover{
+    background-color: hsl(0, 0%, 85%);
+}
+._1tb9r2R8AcSezOvKIhcsnv{
+    font-family: "Google Sans",sans-serif;
+}
+/* 文章块 */
+._2LBl8W2aYKLspu039ki3J9{
+    width:100%;
+    height:100%; 
+    /* Comic Sans MS, Comic Sans, cursive  */
+    /* font-family: "Google Sans",sans-serif; */
+    /* font-family: Comic Sans MS, Comic Sans, cursive; */
+    word-break: break-all;
+}
+._2LBl8W2aYKLspu039ki3J9 pre._2laoBHIyc1FWGgEHTqKfb {
+    margin: 10px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+._2LBl8W2aYKLspu039ki3J9 p , b, li{
+    margin: 10px 10px 20px 10px;
+    line-height: 1.68;
+    letter-spacing: -0.004em;
+}
+/* 文章第一个字母大写 */
+._2LBl8W2aYKLspu039ki3J9 > div > p:first-of-type::first-letter {
+    text-transform: uppercase;
+    font-size: 3em;
+    margin-right: 5px;
+    margin-left: 3px;
+    font-family: "Google Sans",sans-serif;
+    line-height: 1.0;
+    color:hsl(0, 100%, 54%);
+    float: left;
+}
+._2LBl8W2aYKLspu039ki3J9 p > code {
+    border-radius: 3px;
+    margin-left: 3px;
+    margin-right:3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: hsl(0, 0%, 90%);
+    font-weight: 550;
+    color: hsl(0, 100%, 54%);
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+._2LBl8W2aYKLspu039ki3J9  a{
+    
+}
+
+/* markdown 中表格 */
+._2LBl8W2aYKLspu039ki3J9 table{
+    margin: 20px;
+    table-layout:fixed;
+    word-break:break-all;
+    width: 98%;
+    height: 100%;
+    border-collapse: collapse;
+    margin: 5px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+._2LBl8W2aYKLspu039ki3J9 table ,th, td{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+._2LBl8W2aYKLspu039ki3J9 tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* 图片 */
+._2LBl8W2aYKLspu039ki3J9 img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+/* 小图标 */
+._2LBl8W2aYKLspu039ki3J9 img._33f20mO7d3zAcKwWGmmsvN {
+    width: 6em;
+    height: auto;
+    padding: 10px;
+}
+
+/* markdown 中链接 
+https://www.w3cplus.com/css/where-lines-break-is-complicated-heres-all-the-related-css-and-html.html
+*/
+._2LBl8W2aYKLspu039ki3J9 p a {
+    width:100%;
+    height:100%;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+
+/* body */
+._3ERRVH7jnH_2lYRNVvh2vm{
+    padding-top: 60px;
+    width:100%;
+}
+._1uUBLURpvngLQrrbp_G1P-{
+    color:lightgrey;
+    font-size:100px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity: 0.6;
+}
+/*  footer */
+div._1K9kGjt1peThvRLxjB5X2V{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    margin-top:60px;
+}
+div._1hhPGjftK45T1p7HK6fu_9 {
+    font-family: "Google Sans",sans-serif;
+    font-size:smaller;
+    font-weight: 600;
+    color: hsl(0, 0%, 67%);
+    display:flex;
+    margin: 10px;
+    /* 水平居中 */
+    justify-content:center;
+    /* 垂直居中 */
+    align-items:center
+}
+div._1hhPGjftK45T1p7HK6fu_9 > img._16UJLyIufG-5uh5dkJb8s_{
+    width: 100px;
+    height: 50px;
+}
+div._1hhPGjftK45T1p7HK6fu_9 > img._2OkQJxIWtlZS2wd3gezwBF{
+    width:150px;
+    height:34px;
+}
+div._1hhPGjftK45T1p7HK6fu_9 > span{
+    margin: 4px;
+}
+
+/* 浏览器 */
+::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+    background-color:hsl(0, 0%, 17%);;
+}
+/*定义滚动条轨道
+ 内阴影+圆角*/
+ ::-webkit-scrollbar-track
+ {
+     border-radius:2px;
+     background-color:hsl(0, 0%, 17%);;
+ }
+/*定义滑块
+ 内阴影+圆角*/
+ ::-webkit-scrollbar-thumb
+ {
+     border-radius:2px;
+     background-color:hsl(0, 0%, 62%);;
+ }
+
+
+/*# sourceMappingURL=styles.chunk.css.map*/
